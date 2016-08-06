@@ -1,4 +1,4 @@
-package ar.edu.ub.pcsw2016;
+package ar.edu.ub.pcsw2016.diegovega;
 
 import java.util.ArrayList;
 
