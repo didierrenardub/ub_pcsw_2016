@@ -18,4 +18,22 @@ public class GitSetup implements IExersice {
     public void run(){
         System.out.println("User name: " + this.userName);
     }
+
+    public ID id() {
+        return GitSetup.ID;
+    }
+
+    public float grade(IExercise exercise) {
+        float grade = 0;
+        for (IExercise e : excerciseList) {
+            if (e == exercise){
+                return e.grade();
+            }
+        }
+        return grade;
+    }
+
+    public void setGrade(float grade) {
+        this.studentGrade = grade;
+    }
 }
