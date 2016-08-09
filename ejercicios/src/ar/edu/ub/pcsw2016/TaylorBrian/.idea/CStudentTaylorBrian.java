@@ -6,6 +6,4 @@ public class BrianTaylor implements IStudent{
         return 03132;
     }
     void addExercise(IExercise exercise);
-
-
 }
