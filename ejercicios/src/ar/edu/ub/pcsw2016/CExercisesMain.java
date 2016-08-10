@@ -12,27 +12,5 @@ public class CExercisesMain
 {
     public static void main(String[] args) {
 
-        FranciscoGinzo ginzo = new FranciscoGinzo("Francisco", "Ginzo", 3113);
-        ExerciseGitSetUp gitSetup = new ExerciseGitSetUp(IExercise.ID.GIT_SETUP);
-        ExerciseStudentCreation studentCreation = new ExerciseStudentCreation(IExercise.ID.STUDENT_CREATION);
-        ginzo.addExercise(gitSetup);
-        ginzo.addExercise(studentCreation);
-        System.out.println(gitSetup.id());
-        gitSetup.run();
-        studentCreation.setGrade(-12);
-        gitSetup.setGrade(8);
-        studentCreation.setGrade(5);
-        System.out.println(gitSetup.grade());
-        System.out.println(studentCreation.grade());
-        System.out.println(ginzo.gradesAverage());
-        List<IExercise> lista = ginzo.getEjercicios();
-        Iterator itr = lista.iterator();
-        while (itr.hasNext()) {
-            Object elemento = itr.next();
-            System.out.print(elemento + " ");
-        }
-        System.out.println("\n" + ginzo.name());
-        studentCreation.run();
-        System.out.println(studentCreation.id());
     }
 }
