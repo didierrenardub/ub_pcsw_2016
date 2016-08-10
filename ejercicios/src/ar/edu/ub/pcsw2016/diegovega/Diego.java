@@ -1,5 +1,6 @@
-package ar.edu.ub.pcsw2016.diegovega;
+package DiegoVega;
 import java.util.*;
+import ar.edu.ub.pcsw2016.*;
 
 /**
  * Created by Pulpo on 06/08/2016.
@@ -14,7 +15,7 @@ public class Diego implements IStudent{
     }
 
     public String name() {
-        return getName();
+        return this.name;
     }
 
     public int registrationNumber() {
@@ -26,7 +27,7 @@ public class Diego implements IStudent{
     }
 
     public IExercise exercise(IExercise.ID withId) {
-        for (IExercise e : exerciseList)
+        for (IExercise e : excerciseList)
         {
             if (e.id() == withId){
                 return e;
@@ -37,7 +38,7 @@ public class Diego implements IStudent{
 
     public float gradesAverage() {
         float average = 0;
-        int exerciseListLength = exerciseList.size();
+        int exerciseListLength = excerciseList.size();
         for (IExercise e : excerciseList) {
             average += e.grade();
         }
