@@ -1,25 +1,16 @@
 package ar.edu.ub.pcsw2016.diegovega;
+import java.util.*;
 
 /**
  * Created by Pulpo on 06/08/2016.
  */
 public class Diego implements IStudent{
-    private String name;
-    private int registrationNumber;
-    private List<IExercise> excerciseList = new ArrayList<IExercise>();
-
-    public int getRegistrationNumber() {
-        return registrationNumber;
-    }
-
-    public String getName() {
-        return name;
-    }
+    private String name = "Diego Santiago Vega";
+    private int registrationNumber = 3116;
+    private ArrayList<IExercise> excerciseList = new ArrayList<IExercise>();
 
 
-    public Diego(String name, int registrationNumber){
-        this.name = name;
-        this.registrationNumber = registrationNumber;
+    public Diego(){
     }
 
     public String name() {
@@ -27,7 +18,7 @@ public class Diego implements IStudent{
     }
 
     public int registrationNumber() {
-        return getRegistrationNumber();
+        return this.registrationNumber;
     }
 
     public void addExercise(IExercise exercise) {
