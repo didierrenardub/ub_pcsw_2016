@@ -8,10 +8,10 @@ import java.util.List;
 
 public class FranciscoGinzo implements IStudent {
 
-       private final String APELLIDO;
-       private final String NOMBRE;
-       private final int MATRICULA;
-       private List<IExercise> ejercicios;
+    private final String APELLIDO;
+    private final String NOMBRE;
+    private final int MATRICULA;
+    private List<IExercise> ejercicios;
 
     /*
     Constructor
@@ -23,90 +23,90 @@ public class FranciscoGinzo implements IStudent {
     /*
     Constructor
     */
-     public FranciscoGinzo(String nombre, String apellido, int matricula) {
-            this.NOMBRE = nombre;
-            this.APELLIDO = apellido;
-            this.MATRICULA = matricula;
+    public FranciscoGinzo(String nombre, String apellido, int matricula) {
+        this.NOMBRE = nombre;
+        this.APELLIDO = apellido;
+        this.MATRICULA = matricula;
         }
 
-        /*
-        Getter de los atributos nombre, apellido
-         */
-        @Override
-        public String name() {
-            return getNombre() + " " + getApellido();
-        }
+    /*
+    Getter de los atributos nombre, apellido
+    */
+    @Override
+    public String name() {
+        return getNombre() + " " + getApellido();
+    }
 
-        /*
-        Getter del atributo matricula
-         */
-        @Override
-        public int registrationNumber() {
-           return this.MATRICULA;
-        }
+    /*
+    Getter del atributo matricula
+    */
+    @Override
+    public int registrationNumber() {
+        return this.MATRICULA;
+    }
 
-        /*
-        Calcula la nota promedio considerando cantidad de ejercicios y
-        nota asignada a cada uno de los mismos
-         */
-        @Override
-        public float gradesAverage() {
-            try {
-                float average;
-                int cantidad = getEjercicios().size();
-                float puntajeTotal = 0;
-                for (int i = 0; i < cantidad; i++) {
-                    puntajeTotal =+ getEjercicios().get(i).grade();
+    /*
+    Calcula la nota promedio considerando cantidad de ejercicios y
+    nota asignada a cada uno de los mismos
+    */
+    @Override
+    public float gradesAverage() {
+        try {
+            float average;
+            int cantidad = getEjercicios().size();
+            float puntajeTotal = 0;
+            for (int i = 0; i < cantidad; i++) {
+                puntajeTotal =+ getEjercicios().get(i).grade();
+            }
+            average = puntajeTotal / cantidad;
+            return average;
+        }
+        catch (Exception e) {
+            System.out.println("El alumno no tiene ejercicios asignados.");
+        }
+        return 0;
+    }
+
+    /*
+    Agrega un ejercicio a la lista de ejercicios
+    */
+    @Override
+    public void addExercise(IExercise exercise) {
+        ejercicios = new LinkedList<>();
+        ejercicios.add(exercise);
+        setEjercicios(ejercicios);
+    }
+
+    /*
+    Devuelve el ejercicio cuyo ID coincide con el ID pasado como argumento
+    */
+    @Override
+    public IExercise exercise(IExercise.ID withId) {
+        if (! getEjercicios().isEmpty()) {
+            for (IExercise ejercicio : getEjercicios()) {
+                if (ejercicio.id() == withId) {
+                    return ejercicio;
                 }
-                average = puntajeTotal / cantidad;
-                return average;
             }
-            catch (Exception e) {
-                System.out.println("El alumno no tiene ejercicios asignados.");
-            }
-            return 0;
         }
+        return null;
+    }
 
-        /*
-        Agrega un ejercicio a la lista de ejercicios
-         */
-        @Override
-        public void addExercise(IExercise exercise) {
-            ejercicios = new LinkedList<>();
-            ejercicios.add(exercise);
-            setEjercicios(ejercicios);
-        }
+    public String getApellido() {
+        return this.APELLIDO;
+    }
 
-        /*
-        Devuelve el ejercicio cuyo ID coincide con el ID pasado como argumento
-         */
-        @Override
-        public IExercise exercise(IExercise.ID withId) {
-            if (! getEjercicios().isEmpty()) {
-                for (IExercise ejercicio : getEjercicios()) {
-                    if (ejercicio.id() == withId) {
-                        return ejercicio;
-                    }
-                }
-            }
-            return null;
-        }
+    public void setEjercicios(List<IExercise> ejercicios) {
+        this.ejercicios = ejercicios;
+    }
 
-        public String getApellido() {
-            return this.APELLIDO;
-        }
+    public List<IExercise> getEjercicios() {
+        return this.ejercicios;
+    }
 
-        public void setEjercicios(List<IExercise> ejercicios) {
-            this.ejercicios = ejercicios;
-        }
-
-        public List<IExercise> getEjercicios() {
-            return this.ejercicios;
-        }
-
-        public String getNombre() {
-            return this.NOMBRE;
-        }
+    public String getNombre() {
+        return this.NOMBRE;
+    }
 
 }
 
