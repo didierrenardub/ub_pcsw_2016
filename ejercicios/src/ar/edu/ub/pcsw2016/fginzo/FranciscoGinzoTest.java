@@ -24,11 +24,14 @@ public class FranciscoGinzoTest extends Assert {
     public void gradesAverage() throws Exception {
         FranciscoGinzo ginzo = new FranciscoGinzo();
         ExerciseGitSetUp gitSetup = new ExerciseGitSetUp(IExercise.ID.GIT_SETUP);
+        ExerciseStudentCreation studentCreation = new ExerciseStudentCreation(IExercise.ID.STUDENT_CREATION);
         ginzo.addExercise(gitSetup);
-        gitSetup.setGrade(8);
-        assertEquals(8, ginzo.gradesAverage(), DELTA);
-        float grade = 8;
-        gitSetup.setGrade(grade);
-        assertEquals(grade, ginzo.gradesAverage(), DELTA);
+        ginzo.addExercise(studentCreation);
+        float grade1 = 8;
+        float grade2 = 5;
+        float average = (grade1 + grade2) / ginzo.getEjercicios().size();
+        gitSetup.setGrade(grade1);
+        studentCreation.setGrade(grade2);
+        assertEquals(average, ginzo.gradesAverage(), DELTA);
     }
 }

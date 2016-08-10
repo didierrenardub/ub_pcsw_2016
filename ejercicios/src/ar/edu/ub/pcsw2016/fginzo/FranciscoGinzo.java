@@ -27,7 +27,8 @@ public class FranciscoGinzo implements IStudent {
         this.NOMBRE = nombre;
         this.APELLIDO = apellido;
         this.MATRICULA = matricula;
-        }
+        this.ejercicios = new LinkedList<>();
+    }
 
     /*
     Getter de los atributos nombre, apellido
@@ -56,7 +57,7 @@ public class FranciscoGinzo implements IStudent {
             int cantidad = getEjercicios().size();
             float puntajeTotal = 0;
             for (int i = 0; i < cantidad; i++) {
-                puntajeTotal =+ getEjercicios().get(i).grade();
+                puntajeTotal += getEjercicios().get(i).grade();
             }
             average = puntajeTotal / cantidad;
             return average;
@@ -72,9 +73,7 @@ public class FranciscoGinzo implements IStudent {
     */
     @Override
     public void addExercise(IExercise exercise) {
-        ejercicios = new LinkedList<>();
         ejercicios.add(exercise);
-        setEjercicios(ejercicios);
     }
 
     /*
