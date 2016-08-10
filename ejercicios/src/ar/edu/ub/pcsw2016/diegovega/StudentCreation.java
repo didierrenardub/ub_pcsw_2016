@@ -1,4 +1,4 @@
-package DiegoVega;
+package ar.edu.ub.pcsw2016.diegovega;
 import ar.edu.ub.pcsw2016.*;
 import java.util.ArrayList;
 
@@ -19,7 +19,7 @@ public class StudentCreation implements IExercise{
     }
 
     public ID id() {
-        return GitSetup.ID.GIT_SETUP;
+        return StudentCreation.ID.STUDENT_CREATION;
     }
 
     public void setGrade(float grade) {
