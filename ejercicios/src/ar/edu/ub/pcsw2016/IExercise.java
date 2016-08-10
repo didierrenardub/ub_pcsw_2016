@@ -1,4 +1,4 @@
-package ar.edu.ub.pcsw2016.diegovega;
+package ar.edu.ub.pcsw2016;
 
 /**
  Interface for exercises. Students will have to implement this interface
@@ -10,7 +10,7 @@ public interface IExercise
      to the students by the professor. When implementing IExercise interface,
      the corresponding ID should be returned by method id().
      */
-    enum ID;
+    enum ID
     {
         /** GIT_SETUP exercise tasks:
          1) Setup a GitHub account.

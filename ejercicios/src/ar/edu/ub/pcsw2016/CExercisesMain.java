@@ -1,4 +1,4 @@
-package ar.edu.ub.pcsw2016.diegovega;
+package ar.edu.ub.pcsw2016;
 
 public class CExercisesMain
 {
