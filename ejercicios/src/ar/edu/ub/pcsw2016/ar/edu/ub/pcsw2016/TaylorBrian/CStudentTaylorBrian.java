@@ -8,11 +8,23 @@ public class CStudentTaylorBrian implements IStudent{
     public String name(){
         return "Brian Agustín Taylor";
     }
-    public int registrationNumber(){
+    private int registrationNumber(){
         return 03132;
     }
     private void addExercise(IExercise exercise){
         exerciseArrayList.add(exercise);
+    }
+
+    public IExercise exercise(IExercise withId){
+        for (IExercise ejercicio: exerciseArrayList)
+              { if (ejercicio == withId){
+                  return withId;
+              }
+              else return null;
+        }
+    }
+    public float gradesAverage(grade){
+
     }
 
 }
