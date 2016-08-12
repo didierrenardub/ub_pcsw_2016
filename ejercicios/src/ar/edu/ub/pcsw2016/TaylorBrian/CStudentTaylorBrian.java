@@ -24,7 +24,13 @@ public class CStudentTaylorBrian implements IStudent{
         }
     }
     public float gradesAverage(grade){
-
+        float average;
+        int cantidadEjecicios= exerciseArrayList.size();
+        for (IExercise e: exerciseArrayList) {
+            average == average + e.grade;
+        }
+        average = average / cantidadEjecicios;
+        return average;
     }
 
 }
