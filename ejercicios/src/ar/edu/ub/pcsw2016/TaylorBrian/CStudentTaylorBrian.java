@@ -11,7 +11,7 @@ public class CStudentTaylorBrian implements IStudent{
     private int registrationNumber(){
         return 03132;
     }
-    private void addExercise(IExercise exercise){
+    public void addExercise(IExercise exercise){
         exerciseArrayList.add(exercise);
     }
 
