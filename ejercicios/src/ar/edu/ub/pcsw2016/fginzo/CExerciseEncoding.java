@@ -6,17 +6,16 @@ public class CExerciseEncoding extends CExercise {
    Constructor
     */
     public CExerciseEncoding (ID id) {
-
     }
 
     @Override
     public void run() {
         CEncoderJeringozo codificador = new CEncoderJeringozo();
-        String jeringozo1 = codificador.encode("un amuleto ideal porque se viene el dia del neumatico");
-        //codificador.encodeT("se viene el dia del amuleto\n");
-        //String jeringozo2 = codificador.encode("la");
-        //String jeringozo3 = codificador.encode("la amada");
-        //System.out.println(jeringozo1 + "\n" + jeringozo2 + "\n" + jeringozo3);
+        String jeringozo1 = codificador.encode("un amuleto excelente, porque coordina la guia del dia del neumatico.");
+        String jeringozo2 = codificador.encode("Hoy es Fácil y aleatorio la Mítica única posibilidad de acercarse.");
+        String jeringozo3 = codificador.encode("MAÑANA esTAremosS EN LA AERONAVE BUSCANDO LUgar DONDE ATERRIZAR");
         System.out.println(jeringozo1);
+        System.out.println(jeringozo2);
+        System.out.println(jeringozo3);
     }
 }
