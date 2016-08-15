@@ -18,12 +18,12 @@ public class CStudentFranciscoGinzo implements IStudent {
     */
     public CStudentFranciscoGinzo() {
         this("Francisco", "Ginzo", 3113);
-    }
+        }
 
     /*
     Constructor
     */
-    public CStudentFranciscoGinzo (String nombre, String apellido, int matricula) {
+    public CStudentFranciscoGinzo(String nombre, String apellido, int matricula) {
         this.NOMBRE = nombre;
         this.APELLIDO = apellido;
         this.MATRICULA = matricula;
@@ -52,14 +52,18 @@ public class CStudentFranciscoGinzo implements IStudent {
     */
     @Override
     public float gradesAverage() {
-        if (getEjercicios().size() > 0) {
+        try {
+            float average;
             int cantidad = getEjercicios().size();
             float puntajeTotal = 0;
             for (int i = 0; i < cantidad; i++) {
                 puntajeTotal += getEjercicios().get(i).grade();
             }
-            float average = puntajeTotal / cantidad;
+            average = puntajeTotal / cantidad;
             return average;
+        }
+        catch (Exception e) {
+            System.out.println("El alumno no tiene ejercicios asignados.");
         }
         return 0;
     }
@@ -104,3 +108,4 @@ public class CStudentFranciscoGinzo implements IStudent {
     }
 
 }
+

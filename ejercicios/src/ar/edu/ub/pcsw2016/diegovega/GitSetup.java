@@ -1,5 +1,6 @@
 package ar.edu.ub.pcsw2016.diegovega;
-import ar.edu.ub.pcsw2016.*;
+
+import ar.edu.ub.pcsw2016.IExercise;
 
 import java.util.ArrayList;
 

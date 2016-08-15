@@ -6,7 +6,7 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
-public class FranciscoGinzoTest extends Assert {
+public class CFranciscoGinzoTest extends Assert {
 
     private static final double DELTA = 1e-15;
 
@@ -22,9 +22,9 @@ public class FranciscoGinzoTest extends Assert {
 
     @Test
     public void gradesAverage() throws Exception {
-        FranciscoGinzo ginzo = new FranciscoGinzo();
-        ExerciseGitSetUp gitSetup = new ExerciseGitSetUp(IExercise.ID.GIT_SETUP);
-        ExerciseStudentCreation studentCreation = new ExerciseStudentCreation(IExercise.ID.STUDENT_CREATION);
+        CStudentFranciscoGinzo ginzo = new CStudentFranciscoGinzo();
+        CExerciseGitSetUp gitSetup = new CExerciseGitSetUp(IExercise.ID.GIT_SETUP);
+        CExerciseStudentCreation studentCreation = new CExerciseStudentCreation(IExercise.ID.STUDENT_CREATION);
         ginzo.addExercise(gitSetup);
         ginzo.addExercise(studentCreation);
         float grade1 = 8;

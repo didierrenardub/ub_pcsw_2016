@@ -1,7 +1,9 @@
 package ar.edu.ub.pcsw2016;
 
 //import ar.edu.ub.pcsw2016.diegovega.Diego;
-import ar.edu.ub.pcsw2016.fginzo.FranciscoGinzo;
+import ar.edu.ub.pcsw2016.fginzo.CExerciseGitSetUp;
+import ar.edu.ub.pcsw2016.fginzo.CExerciseStudentCreation;
+import ar.edu.ub.pcsw2016.fginzo.CStudentFranciscoGinzo;
 
 import java.util.ArrayList;
 
@@ -20,9 +22,9 @@ public class CStudentStatistics
         diego.addExercise(new ar.edu.ub.pcsw2016.diegovega.GitSetup());
         diego.addExercise(new ar.edu.ub.pcsw2016.diegovega.StudentCreation());*/
         
-        IStudent francisco = new FranciscoGinzo();
-        francisco.addExercise(new ar.edu.ub.pcsw2016.fginzo.ExerciseGitSetUp(IExercise.ID.GIT_SETUP));
-        francisco.addExercise(new ar.edu.ub.pcsw2016.fginzo.ExerciseStudentCreation(IExercise.ID.STUDENT_CREATION));
+        IStudent francisco = new CStudentFranciscoGinzo();
+        francisco.addExercise(new CExerciseGitSetUp(IExercise.ID.GIT_SETUP));
+        francisco.addExercise(new CExerciseStudentCreation(IExercise.ID.STUDENT_CREATION));
         
         //addStudent(diego);
         addStudent(francisco);

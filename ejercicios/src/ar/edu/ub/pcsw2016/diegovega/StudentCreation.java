@@ -1,11 +1,13 @@
 package ar.edu.ub.pcsw2016.diegovega;
-import ar.edu.ub.pcsw2016.*;
+
+import ar.edu.ub.pcsw2016.IExercise;
+
 import java.util.ArrayList;
 
 /**
  * Created by Pulpo on 06/08/2016.
  */
-public class StudentCreation implements IExercise{
+public class StudentCreation implements IExercise {
     private String name = "StudentCreation";
     private ArrayList<IExercise> excerciseList = new ArrayList<IExercise>();
     private float grade;

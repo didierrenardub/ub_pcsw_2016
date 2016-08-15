@@ -1,11 +1,14 @@
 package ar.edu.ub.pcsw2016.diegovega;
-import java.util.*;
-import ar.edu.ub.pcsw2016.*;
+
+import ar.edu.ub.pcsw2016.IExercise;
+import ar.edu.ub.pcsw2016.IStudent;
+
+import java.util.ArrayList;
 
 /**
  * Created by Pulpo on 06/08/2016.
  */
-public class Diego implements IStudent{
+public class Diego implements IStudent {
     private String name = "Diego Santiago Vega";
     private int registrationNumber = 3116;
     private ArrayList<IExercise> excerciseList = new ArrayList<IExercise>();

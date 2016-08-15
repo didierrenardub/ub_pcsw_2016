@@ -6,7 +6,7 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
-public class ExerciseStudentCreationTest extends Assert {
+public class CExerciseStudentCreationTest extends Assert {
 
     @Before
     public void setUp() throws Exception {
@@ -21,7 +21,7 @@ public class ExerciseStudentCreationTest extends Assert {
     @Test
     public void setGrade() throws Exception {
         float grade = 9;
-        new ExerciseStudentCreation(IExercise.ID.STUDENT_CREATION).setGrade(grade);
+        new CExerciseStudentCreation(IExercise.ID.STUDENT_CREATION).setGrade(grade);
         assertTrue(grade >= 0 && grade <= 10);
     }
 
