@@ -6,7 +6,7 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
-public class CFranciscoGinzoTest extends Assert {
+public class CStudentFranciscoGinzoTest extends Assert {
 
     private static final double DELTA = 1e-15;
 
