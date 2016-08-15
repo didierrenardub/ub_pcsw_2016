@@ -24,5 +24,4 @@ public class CExerciseStudentCreationTest extends Assert {
         new CExerciseStudentCreation(IExercise.ID.STUDENT_CREATION).setGrade(grade);
         assertTrue(grade >= 0 && grade <= 10);
     }
-
 }

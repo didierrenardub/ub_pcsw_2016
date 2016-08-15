@@ -6,7 +6,7 @@ public class CExercisesMain
 {
     public static void main(String[] args)
     {
-        /*CStudentStatistics stats = new CStudentStatistics();
+        CStudentStatistics stats = new CStudentStatistics();
         
         IStudent diego = stats.student("Diego Santiago Vega");
         diego.exercise(IExercise.ID.GIT_SETUP).setGrade(CGrader.instance().completion(10.0f).finalGrade());
@@ -20,9 +20,6 @@ public class CExercisesMain
         for(IStudent s : stats.students())
         {
             System.out.println("\t" + s.name() + ": " + s.gradesAverage());
-        }*/
-
-        CExerciseEncoding cExerciseEncoding = new CExerciseEncoding(IExercise.ID.ENCODING);
-        cExerciseEncoding.run();
+        }
     }
 }

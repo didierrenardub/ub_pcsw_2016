@@ -23,22 +23,19 @@ public class CEncoderJeringozo implements IEncoder {
             List<String> listaStr = this.crearListaStr(listaChar); //convierte List<Character> pasada como argumento en
                                                                    //List de tipo String
             StringBuilder stringBuilder = new StringBuilder();
-            int elementos = listaStr.size();
-            for (int i = 0; i < elementos; i++) {
+            int coleccion = listaStr.size();
+            for (int i = 0; i < coleccion; i++) {
                 String str = null;
                 if ((listaStr.get(i).equalsIgnoreCase("a")) || (listaStr.get(i).equalsIgnoreCase("á")) ||
                         (listaStr.get(i).equalsIgnoreCase("e")) || (listaStr.get(i).equalsIgnoreCase("é")) ||
                         (listaStr.get(i).equalsIgnoreCase("i")) || (listaStr.get(i).equalsIgnoreCase("í")) ||
                         (listaStr.get(i).equalsIgnoreCase("o")) || (listaStr.get(i).equalsIgnoreCase("ó")) ||
                         (listaStr.get(i).equalsIgnoreCase("u")) || (listaStr.get(i).equalsIgnoreCase("ú"))) {
-                    if (stringIsUpperCase(listaStr.get(i))) {
-                        str = listaStr.get(i) + "P" + listaStr.get(i);
-                    }
-                    else {
-                        str = listaStr.get(i) + "p" + listaStr.get(i);
-                    }
+
+                    str = (stringIsUpperCase(listaStr.get(i))) ? listaStr.get(i) + "P" + listaStr.get(i) :
+                            listaStr.get(i) + "p" + listaStr.get(i);
                 }
-                String jeringozo = listaStr.get(i).replaceAll("a|A|á|e|E|é|i|I|í|o|O|ó|u|U|ú", str);
+                String jeringozo = listaStr.get(i).replaceAll("a|A|á|Á|e|E|é|É|i|I|í|Í|o|O|ó|Ó|u|U|ú|Ú", str);
                 stringBuilder.append(jeringozo);
             }
             return stringBuilder.toString();
@@ -51,8 +48,8 @@ public class CEncoderJeringozo implements IEncoder {
     Accesibilidad private porque es invocado sólo por el método encode(String str)
     */
     private List<Character> crearListaChar(char[] array) {
-        int elementos = array.length;
         List<Character> listaChar = new LinkedList<>();
+        int elementos = array.length;
         for (int i = 0; i < elementos; i++) {
             listaChar.add(array[i]);
         }
@@ -60,20 +57,19 @@ public class CEncoderJeringozo implements IEncoder {
     }
 
     /*
-    Método que convierte un List<Character> en List de tipo String
+    Método que convierte una List<Character> en List de tipo String
     Accesibilidad private porque es invocado sólo por el método encode(String str)
     */
     private List<String> crearListaStr(List<Character> listaChar) {
-        int elementos = listaChar.size();
         List<String> listaStr = new LinkedList<>();
-        for (int i = 0; i < elementos; i++) {
-            listaStr.add(listaChar.get(i).toString());
+        for (Character elemento : listaChar) {
+            listaStr.add(elemento.toString());
         }
         return listaStr;
     }
 
     private boolean stringIsUpperCase(String str) {
-        if (str.matches("A|E|I|O|U")) {
+        if (str.matches("A|Á|E|É|I|Í|O|Ó|U|Ú")) {
             return true;
         }
         return false;
