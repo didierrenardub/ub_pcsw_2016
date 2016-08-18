@@ -2,17 +2,11 @@ package ar.edu.ub.pcsw2016.fginzo;
 
 import ar.edu.ub.pcsw2016.IExercise;
 
-public class ExerciseGitSetUp implements IExercise {
+
+public abstract class CExercise implements IExercise {
 
     private float grade;
     private ID id;
-
-    /*
-    Constructor
-     */
-    public ExerciseGitSetUp (ID id) {
-        this.id = id;
-    }
 
     /*
     Getter del ID del ejercicio
@@ -23,9 +17,7 @@ public class ExerciseGitSetUp implements IExercise {
     }
 
     @Override
-    public void run() {
-        System.out.println("fginzo");
-    }
+    public abstract void run();
 
     /*
     Setter de la nota del ejercicio sólo en un rango predefinido
@@ -49,7 +41,7 @@ public class ExerciseGitSetUp implements IExercise {
     }
 
     public String toString() {
-        return this.id() + " ";
+        return "" + this.id();
     }
 
 }
