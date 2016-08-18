@@ -25,9 +25,6 @@ public class EncoderRosarigasino implements IEncoder {
         String encodedSentence = "";
             for (int i = 0; i < words.length; i++){
                 String temp = words[i];
-                for(int z = 0; z<){
-
-                }
                 for (int j = 0; j < temp.length(); j++) {
                     char c = temp.charAt(j);
                     if (vocals.contains(c)) {
