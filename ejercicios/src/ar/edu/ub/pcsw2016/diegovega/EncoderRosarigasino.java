@@ -13,7 +13,9 @@ public class EncoderRosarigasino implements IEncoder {
     public EncoderRosarigasino(){}
 
     public String encode(String what) {
+        if (what != null){
         String lowerCaseWhat = what.toLowerCase();
+        String[] words = lowerCaseWhat.split(" ");
         List<Character> vocals = new ArrayList<Character>();
         vocals.add('a');
         vocals.add('e');
@@ -21,19 +23,20 @@ public class EncoderRosarigasino implements IEncoder {
         vocals.add('o');
         vocals.add('u');
         String encodedSentence = "";
-        if (what != null){
-            for (int i = 0; i < lowerCaseWhat.length(); i++){
-                char c = lowerCaseWhat.charAt(i);
-                if (vocals.contains(c)){
-                        if (vocals.contains(encodedSentence.charAt(encodedSentence.length()-1))) {
+            for (int i = 0; i < words.length; i++){
+                String temp = words[i];
+                for (int j = 0; j < temp.length(); j++) {
+                    char c = temp.charAt(j);
+                    if (vocals.contains(c)) {
+                        if (vocals.contains(encodedSentence.charAt(encodedSentence.length() - 1))) {
                             encodedSentence += c;
-                        }
-                        else{
+                        } else {
                             encodedSentence += "gas" + c;
                         }
-                }
-                else {
-                    encodedSentence += c;
+                    }
+                    else {
+                        encodedSentence += c;
+                    }
                 }
             }
             return encodedSentence;

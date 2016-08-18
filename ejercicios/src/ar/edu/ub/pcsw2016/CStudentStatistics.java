@@ -1,6 +1,6 @@
 package ar.edu.ub.pcsw2016;
 
-import ar.edu.ub.pcsw2016.diegovega.Diego;
+import ar.edu.ub.pcsw2016.diegovega.StudentDiego;
 import ar.edu.ub.pcsw2016.fginzo.FranciscoGinzo;
 
 import java.util.ArrayList;
@@ -16,9 +16,9 @@ public class CStudentStatistics
     {
         m_students = new ArrayList<IStudent>();
         
-        IStudent diego = new Diego();
-        diego.addExercise(new ar.edu.ub.pcsw2016.diegovega.GitSetup());
-        diego.addExercise(new ar.edu.ub.pcsw2016.diegovega.StudentCreation());
+        IStudent diego = new StudentDiego();
+        diego.addExercise(new ar.edu.ub.pcsw2016.diegovega.ExerciseGitSetup());
+        diego.addExercise(new ar.edu.ub.pcsw2016.diegovega.ExerciseCreateStudent());
         
         IStudent francisco = new FranciscoGinzo();
         francisco.addExercise(new ar.edu.ub.pcsw2016.fginzo.ExerciseGitSetUp(IExercise.ID.GIT_SETUP));
