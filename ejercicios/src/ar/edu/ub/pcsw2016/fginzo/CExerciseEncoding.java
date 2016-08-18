@@ -2,8 +2,6 @@ package ar.edu.ub.pcsw2016.fginzo;
 
 public class CExerciseEncoding extends CExercise {
 
-    private ID id;
-
     /*
    Constructor
     */

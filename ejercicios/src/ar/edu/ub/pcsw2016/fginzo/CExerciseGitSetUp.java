@@ -4,8 +4,6 @@ import ar.edu.ub.pcsw2016.IExercise;
 
 public class CExerciseGitSetUp extends CExercise implements IExercise {
 
-    private ID id;
-
     /*
     Constructor
      */

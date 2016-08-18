@@ -6,7 +6,7 @@ import ar.edu.ub.pcsw2016.IExercise;
 public abstract class CExercise implements IExercise {
 
     private float grade;
-    private ID id;
+    protected ID id;
 
     /*
     Getter del ID del ejercicio
