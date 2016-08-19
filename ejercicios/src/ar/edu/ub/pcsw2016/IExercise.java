@@ -29,6 +29,15 @@ public interface IExercise
          */
         STUDENT_CREATION,
     
+        /** ENCODING exercise tasks:
+         1) Create a branch to work on this exercise. Remember to use a reasonable name for it.
+         2) Implement, under your own package name, the IEncoder interface on a class according to
+            the encoding type the professor gave to you (i.e.: CEncoderBinary).
+         3) Don't forget to create an IExercise for this exercise. In the run method, perform the
+            encoding and printing of various strings.
+         */
+        ENCODING,
+    
         /** EXERCISE_COUNT is just a value that tells us the amount of exercises assigned up to now.
          */
         EXERCISE_COUNT
