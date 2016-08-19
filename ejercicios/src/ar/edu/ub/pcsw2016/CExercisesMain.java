@@ -1,5 +1,7 @@
 package ar.edu.ub.pcsw2016;
 
+import ar.edu.ub.pcsw2016.fginzo.CExerciseEncoding;
+
 public class CExercisesMain
 {
     public static void main(String[] args)
@@ -13,6 +15,7 @@ public class CExercisesMain
         IStudent francisco = stats.student("Francisco Ginzo");
         francisco.exercise(IExercise.ID.GIT_SETUP).setGrade(CGrader.instance().completion(10.0f).finalGrade());
         francisco.exercise(IExercise.ID.STUDENT_CREATION).setGrade(CGrader.instance().completion(10.0f).prolixity(9.5f).reliability(9.0f).design(5.0f).finalGrade());
+        francisco.exercise(IExercise.ID.ENCODING).setGrade(CGrader.instance().completion(10.0f).prolixity(9.5f).reliability(9.0f).design(10.0f).finalGrade());
     
         System.out.println("Average grades:");
         for(IStudent s : stats.students())
