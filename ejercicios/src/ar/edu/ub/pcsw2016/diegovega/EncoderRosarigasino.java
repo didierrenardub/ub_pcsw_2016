@@ -23,21 +23,33 @@ public class EncoderRosarigasino implements IEncoder {
         vocals.add('o');
         vocals.add('u');
         String encodedSentence = "";
+        int count = 0;
+        int count2 = 0;
             for (int i = 0; i < words.length; i++){
                 String temp = words[i];
                 for (int j = 0; j < temp.length(); j++) {
                     char c = temp.charAt(j);
-                    if (vocals.contains(c)) {
-                        if (vocals.contains(encodedSentence.charAt(encodedSentence.length() - 1))) {
-                            encodedSentence += c;
-                        } else {
-                            encodedSentence += "gas" + c;
-                        }
+                    if (vocals.contains(c)){
+                        count += 1;
                     }
-                    else {
+                }
+                count -= 1;
+                for (int k = 0; k < temp.length(); k++){
+                    char c = temp.charAt(k);
+                    if (vocals.contains(c)) {
+                        count2 += 1;
+                        if (count == count2) {
+                            encodedSentence += c + "gas";
+                        }
+                        encodedSentence += c;
+                    }
+                    else{
                         encodedSentence += c;
                     }
                 }
+                count = 0;
+                count2 = 0;
+                encodedSentence += " ";
             }
             return encodedSentence;
         }
