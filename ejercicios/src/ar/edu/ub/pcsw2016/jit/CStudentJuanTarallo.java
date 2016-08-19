@@ -73,7 +73,21 @@ class CStudentJuanTarallo implements IStudent {
     }
 
     // Calcula la nota promedio considerando cantidad de ejercicios y nota asignada a cada uno de ellos
-    // REHACER
+
+    public float gradesAverage() {
+        float average;
+        float total;
+        int cantidad = getExercises().size();
+
+        if (average != null){
+            if() {
+                
+            }
+        }
+    }
+
+
+    /* REHACER
     public float gradesAverage() {
         try {
             float average;
@@ -89,7 +103,7 @@ class CStudentJuanTarallo implements IStudent {
             System.out.println("El alumno no tiene ejercicios asignados.");
         }
         return 0;
-    }
+    }*/
 
     // Getter del nombre
 
