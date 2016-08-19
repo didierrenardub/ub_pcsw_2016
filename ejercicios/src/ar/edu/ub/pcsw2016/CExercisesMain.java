@@ -6,29 +6,7 @@ public class CExercisesMain
     {
         CStudentStatistics stats = new CStudentStatistics();
         
-        // Run all exercises from all students
-        for(IStudent s : stats.students())
-        {
-            System.out.println("Running exercises from " + s.name());
-            for(int i = 0; i < IExercise.ID.EXERCISE_COUNT.ordinal(); i++)
-            {
-                IExercise e = s.exercise(IExercise.ID.values()[i]);
-    
-                System.out.println("---------------------------------------------------");
-                System.out.print("Exercise " + IExercise.ID.values()[i].name() + "... ");
-                
-                if(e != null)
-                {
-                    System.out.println("running: ");
-                    e.run();
-                }
-                else
-                {
-                    System.out.println("NOT FOUND");
-                }
-            }
-            System.out.println("===================================================");
-        }
+        stats.runExercises();
         
         IStudent diego = stats.student("Diego Santiago Vega");
         diego.exercise(IExercise.ID.GIT_SETUP).setGrade(CGrader.instance().completion(10.0f).finalGrade());

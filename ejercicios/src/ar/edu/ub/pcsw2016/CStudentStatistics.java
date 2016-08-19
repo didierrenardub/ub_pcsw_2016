@@ -138,5 +138,31 @@ public class CStudentStatistics
         return completion / totalCompletion * 100.0f;
     }
     
+    public void runExercises()
+    {
+        for(IStudent s : students())
+        {
+            System.out.println("Running exercises from " + s.name());
+            for(int i = 0; i < IExercise.ID.EXERCISE_COUNT.ordinal(); i++)
+            {
+                IExercise e = s.exercise(IExercise.ID.values()[i]);
+            
+                System.out.println("---------------------------------------------------");
+                System.out.print("Exercise " + IExercise.ID.values()[i].name() + "... ");
+            
+                if(e != null)
+                {
+                    System.out.println("running: ");
+                    e.run();
+                }
+                else
+                {
+                    System.out.println("NOT FOUND");
+                }
+            }
+            System.out.println("===================================================");
+        }
+    }
+    
     private ArrayList<IStudent> m_students;
 }
