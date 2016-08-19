@@ -6,7 +6,7 @@ import ar.edu.ub.pcsw2016.IStudent;
 import java.util.LinkedList;
 import java.util.List;
 
-public class FranciscoGinzo implements IStudent {
+public class CStudentFranciscoGinzo implements IStudent {
 
     private final String APELLIDO;
     private final String NOMBRE;
@@ -16,14 +16,14 @@ public class FranciscoGinzo implements IStudent {
     /*
     Constructor
     */
-    public FranciscoGinzo() {
+    public CStudentFranciscoGinzo() {
         this("Francisco", "Ginzo", 3113);
         }
 
     /*
     Constructor
     */
-    public FranciscoGinzo(String nombre, String apellido, int matricula) {
+    public CStudentFranciscoGinzo(String nombre, String apellido, int matricula) {
         this.NOMBRE = nombre;
         this.APELLIDO = apellido;
         this.MATRICULA = matricula;
