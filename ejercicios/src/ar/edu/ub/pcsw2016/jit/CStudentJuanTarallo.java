@@ -75,7 +75,7 @@ class CStudentJuanTarallo implements IStudent {
     // Calcula la nota promedio considerando cantidad de ejercicios y nota asignada a cada uno de ellos
 
     public float gradesAverage() {
-        if (getExercises().size() > 0){
+        if (getExercises().size() > 0) {
             float average = 0;
             int getExerciseLength = getExercises().size();
             for (IExercise ejercicio : getExercises()) {

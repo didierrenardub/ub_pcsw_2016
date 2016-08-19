@@ -19,17 +19,7 @@ public class CStudentJuanTaralloTest {
     }
 
     public void gradesAverage() throws Exception {
-        CStudentJuanTarallo jit = new CStudentJuanTarallo();
-        ExerciseGitSetup gitSetup = new ExerciseGitSetup(IExercise.ID.GIT_SETUP);
-        ExerciseStudentCreation studentCreation = new ExerciseStudentCreation(IExercise.ID.STUDENT_CREATION);
-        jit.addExercise(gitSetup);
-        jit.addExercise(studentCreation);
-        float grade1 = 9;
-        float grade2 = 2;
-        float average = (grade1 + grade2) / jit.getExercises().size();
-        gitSetup.setGrade(grade1);
-        studentCreation.setGrade(grade2);
-        assertEquals(average, jit.gradesAverage(), DELTA);
+
     }
 
     private void assertEquals(float average, float v, double delta) {
