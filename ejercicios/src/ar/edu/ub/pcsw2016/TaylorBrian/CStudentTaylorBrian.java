@@ -25,7 +25,7 @@ public class CStudentTaylorBrian implements IStudent{
     public IExercise exercise(IExercise.ID withId) {
         for (IExercise ejercicio: exerciseArrayList)
         { if (ejercicio.id() == withId){
-            return withId;
+            return ejercicio;
         }
         else return null;
         }
@@ -44,10 +44,9 @@ public class CStudentTaylorBrian implements IStudent{
             }
             average = average / cantidadEjecicios;
         }
-        if(average<1 || average>10){
-            return "El valor promedio es invalido";
+        if(average<1 || average>10) {
+            System.out.println("El valor promedio es invalido");
         }
-        else
-            return average;
+           return average;
     }
 }

@@ -12,14 +12,14 @@ public class GIT_SETUP implements IExercise{
     }
 
     public void run(){
-        system.out.println("NibraT");
+        System.out.println("NibraT");
     }
 
-    public void setGrade(grade){
+    public void setGrade(float grade){
         if(grade < 1 || grade>10   ){
-            system.out.println("valor invalido de nota");
+            System.out.println("valor invalido de nota");
         }
         else
-            this.grade()=grade;
+            this.grade =grade;
     }
 }
