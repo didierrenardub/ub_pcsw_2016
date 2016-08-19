@@ -19,6 +19,6 @@ public class EncoderRosarigasinoTest extends Assert{
     @Test
     public void encodeTextDobleVocal() throws Exception {
         EncoderRosarigasino gaso = new EncoderRosarigasino();
-        System.out.println(gaso.encode("HOLA COMO ANDAS"));
+        System.out.println(gaso.encode("HOLA COMO ANDAS, estoy aprendiendo a hablar rosarino"));
     }
 }
