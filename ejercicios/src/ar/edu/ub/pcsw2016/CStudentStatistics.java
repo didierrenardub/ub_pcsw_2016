@@ -1,11 +1,16 @@
 package ar.edu.ub.pcsw2016;
 
+<<<<<<< HEAD
+import ar.edu.ub.pcsw2016.diegovega.StudentDiego;
+import ar.edu.ub.pcsw2016.fginzo.FranciscoGinzo;
+=======
 import ar.edu.ub.pcsw2016.diegovega.*;
 
 import ar.edu.ub.pcsw2016.fginzo.CExerciseEncoding;
 import ar.edu.ub.pcsw2016.fginzo.CExerciseGitSetUp;
 import ar.edu.ub.pcsw2016.fginzo.CExerciseStudentCreation;
 import ar.edu.ub.pcsw2016.fginzo.CStudentFranciscoGinzo;
+>>>>>>> master
 
 import java.util.ArrayList;
 
