@@ -1,7 +1,5 @@
 package ar.edu.ub.pcsw2016;
 
-import ar.edu.ub.pcsw2016.fginzo.CExerciseEncoding;
-
 public class CExercisesMain
 {
     public static void main(String[] args)
