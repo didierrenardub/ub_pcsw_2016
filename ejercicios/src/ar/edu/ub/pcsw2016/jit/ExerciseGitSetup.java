@@ -43,7 +43,7 @@ public class ExerciseGitSetup implements IExercise {
 
     @Override
     public void setGrade(float grade) {
-        if (grade =>0 && grade <= 10){
+        if (grade >= 0 && grade <= 10){
             this.grade = grade;
         }
         else{

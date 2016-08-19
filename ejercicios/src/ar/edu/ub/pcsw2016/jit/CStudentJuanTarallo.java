@@ -49,7 +49,7 @@ class CStudentJuanTarallo implements IStudent {
 
     // Getter de la lista de ejercicios
 
-    private List<IExercise> getExercises() {
+    public List<IExercise> getExercises() {
         return this.exercises;
     }
 
@@ -75,35 +75,19 @@ class CStudentJuanTarallo implements IStudent {
     // Calcula la nota promedio considerando cantidad de ejercicios y nota asignada a cada uno de ellos
 
     public float gradesAverage() {
-        float average;
-        float total;
-        int cantidad = getExercises().size();
-
-        if (average != null){
-            if() {
-                
+        if (getExercises().size() > 0){
+            float average = 0;
+            int getExerciseLength = getExercises().size();
+            for (IExercise ejercicio : getExercises()) {
+                average += ejercicio.grade();
             }
-        }
-    }
-
-
-    /* REHACER
-    public float gradesAverage() {
-        try {
-            float average;
-            int cantidad = getExercises().size();
-            float puntajeTotal = 0;
-            for (int i = 0; i < cantidad; i++) {
-                puntajeTotal += getExercises().get(i).grade();
-            }
-            average = puntajeTotal / cantidad;
+            average = average / getExerciseLength;
             return average;
         }
-        catch (Exception e) {
-            System.out.println("El alumno no tiene ejercicios asignados.");
-        }
         return 0;
-    }*/
+
+
+    }
 
     // Getter del nombre
 
