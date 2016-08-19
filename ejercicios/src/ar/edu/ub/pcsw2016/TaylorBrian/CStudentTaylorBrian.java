@@ -1,4 +1,4 @@
-package ar.edu.ub.pcsw2016.Ejercicios_TaylorBrian;
+package ar.edu.ub.pcsw2016.TaylorBrian;
 import ar.edu.ub.pcsw2016.IExercise;
 import ar.edu.ub.pcsw2016.IStudent;
 
@@ -44,6 +44,10 @@ public class CStudentTaylorBrian implements IStudent{
             }
             average = average / cantidadEjecicios;
         }
-        return average;
+        if(average<1 || average>10){
+            return "El valor promedio es invalido";
+        }
+        else
+            return average;
     }
 }
