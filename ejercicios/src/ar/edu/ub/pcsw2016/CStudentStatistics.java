@@ -1,11 +1,15 @@
 package ar.edu.ub.pcsw2016;
 
+import ar.edu.ub.pcsw2016.ablanco.CStudentAndresBlanco;
 import ar.edu.ub.pcsw2016.diegovega.*;
 
+import ar.edu.ub.pcsw2016.fcarmona.CStudentFacundoCarmona;
 import ar.edu.ub.pcsw2016.fginzo.CExerciseEncoding;
 import ar.edu.ub.pcsw2016.fginzo.CExerciseGitSetUp;
 import ar.edu.ub.pcsw2016.fginzo.CExerciseStudentCreation;
 import ar.edu.ub.pcsw2016.fginzo.CStudentFranciscoGinzo;
+import ar.edu.ub.pcsw2016.maranda.CStudentMartinAranda;
+import ar.edu.ub.pcsw2016.nvega.CStudentNectorVega;
 
 import java.util.ArrayList;
 
@@ -29,8 +33,20 @@ public class CStudentStatistics
         francisco.addExercise(new CExerciseStudentCreation(IExercise.ID.STUDENT_CREATION));
         francisco.addExercise(new CExerciseEncoding(IExercise.ID.ENCODING));
         
+        IStudent andres = new CStudentAndresBlanco();
+        
+        IStudent nector = new CStudentNectorVega();
+        
+        IStudent martin = new CStudentMartinAranda();
+        
+        IStudent facundo = new CStudentFacundoCarmona();
+        
         addStudent(diego);
         addStudent(francisco);
+        addStudent(andres);
+        addStudent(nector);
+        addStudent(martin);
+        addStudent(facundo);
     }
     
     /** Adds a student to student's list.
