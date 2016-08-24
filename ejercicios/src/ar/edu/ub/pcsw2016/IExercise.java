@@ -11,8 +11,7 @@ public interface IExercise {
      * the corresponding ID should be returned by method id().
      */
     enum ID
-
-    {
+	{
         /** GIT_SETUP exercise tasks:
          1) Setup a GitHub account.
          2) Clone the class' repository.
