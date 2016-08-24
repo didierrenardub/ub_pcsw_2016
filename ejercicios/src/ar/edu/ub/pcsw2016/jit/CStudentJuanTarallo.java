@@ -7,7 +7,7 @@ import java.util.LinkedList;
 import java.util.List;
 
 
-class CStudentJuanTarallo implements IStudent {
+public class CStudentJuanTarallo implements IStudent {
 
     private int registrationNumber;
     private String name;
@@ -16,7 +16,7 @@ class CStudentJuanTarallo implements IStudent {
 
     // Constructor
 
-    CStudentJuanTarallo() {
+    public CStudentJuanTarallo() {
         this("Juan", "Tarallo", 3129);
     }
 

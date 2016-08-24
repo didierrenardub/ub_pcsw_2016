@@ -21,7 +21,7 @@ public class ExerciseGitSetup implements IExercise {
 
     @Override
     public ID id() {
-        return null;
+        return this.getId();
     }
 
     public void run() {
@@ -30,7 +30,7 @@ public class ExerciseGitSetup implements IExercise {
 
     @Override
     public float grade() {
-        return 0;
+        return this.getGrade();
     }
 
     // Getter de grade
@@ -53,6 +53,6 @@ public class ExerciseGitSetup implements IExercise {
     // Conversor de ID a string
 
     public String toString() {
-        return this.id() + " ";
+        return "" + this.id();
     }
 }

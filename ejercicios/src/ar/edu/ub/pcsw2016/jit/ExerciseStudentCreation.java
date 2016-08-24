@@ -2,14 +2,14 @@ package ar.edu.ub.pcsw2016.jit;
 
 import ar.edu.ub.pcsw2016.IExercise;
 
-class ExerciseStudentCreation implements IExercise {
+public class ExerciseStudentCreation implements IExercise {
 
     private float grade;
     private IExercise.ID id;
 
     // Constructor
 
-    ExerciseStudentCreation(IExercise.ID id) {
+    public ExerciseStudentCreation(IExercise.ID id) {
         this.id = id;
     }
 

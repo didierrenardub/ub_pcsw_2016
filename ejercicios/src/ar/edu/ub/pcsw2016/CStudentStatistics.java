@@ -10,6 +10,9 @@ import ar.edu.ub.pcsw2016.fginzo.CExerciseGitSetUp;
 import ar.edu.ub.pcsw2016.fginzo.CExerciseStudentCreation;
 import ar.edu.ub.pcsw2016.fginzo.CStudentFranciscoGinzo;
 
+import ar.edu.ub.pcsw2016.jit.*;
+import ar.edu.ub.pcsw2016.jit.ExerciseGitSetup;
+
 import java.util.ArrayList;
 
 /**
@@ -32,13 +35,18 @@ public class CStudentStatistics {
         francisco.addExercise(new CExerciseGitSetUp(IExercise.ID.GIT_SETUP));
         francisco.addExercise(new CExerciseStudentCreation(IExercise.ID.STUDENT_CREATION));
         francisco.addExercise(new CExerciseEncoding(IExercise.ID.ENCODING));
-        
+    
+        IStudent juanIgnacio = new CStudentJuanTarallo();
+        juanIgnacio.addExercise(new ar.edu.ub.pcsw2016.jit.ExerciseGitSetup(IExercise.ID.GIT_SETUP));
+        juanIgnacio.addExercise(new ar.edu.ub.pcsw2016.jit.ExerciseStudentCreation(IExercise.ID.STUDENT_CREATION));
+    
         IStudent brian = new CStudentTaylorBrian();
         brian.addExercise(new GIT_SETUP());
         brian.addExercise(new STUDENT_CREATION());
         
         addStudent(diego);
         addStudent(francisco);
+        addStudent(juanIgnacio);
         addStudent(brian);
     }
 
