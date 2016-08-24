@@ -24,12 +24,12 @@ public class CStudentTaylorBrian implements IStudent{
     @Override
     public IExercise exercise(IExercise.ID withId) {
         for (IExercise ejercicio: exerciseArrayList)
-        { if (ejercicio.id() == withId){
-            return ejercicio;
+        {
+            if (ejercicio.id() == withId){
+                return ejercicio;
+            }
         }
-        else return null;
-        }
-        return exercise(withId);
+        return null;
     }
 
        public float gradesAverage(){
@@ -38,15 +38,16 @@ public class CStudentTaylorBrian implements IStudent{
         if (exerciseArrayList.isEmpty()){
             return 0.0f;
         }
-        else {
-            for (IExercise ejercicio : exerciseArrayList) {
-                average = average + ejercicio.grade();
-            }
-            average = average / cantidadEjecicios;
+        
+        for (IExercise ejercicio : exerciseArrayList) {
+            average = average + ejercicio.grade();
         }
+        average = average / cantidadEjecicios;
+           
         if(average<1 || average>10) {
             System.out.println("El valor promedio es invalido");
         }
-           return average;
+        
+        return average;
     }
 }

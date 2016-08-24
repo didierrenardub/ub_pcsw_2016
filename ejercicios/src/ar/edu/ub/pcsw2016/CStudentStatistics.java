@@ -1,5 +1,8 @@
 package ar.edu.ub.pcsw2016;
 
+import ar.edu.ub.pcsw2016.TaylorBrian.CStudentTaylorBrian;
+import ar.edu.ub.pcsw2016.TaylorBrian.GIT_SETUP;
+import ar.edu.ub.pcsw2016.TaylorBrian.STUDENT_CREATION;
 import ar.edu.ub.pcsw2016.diegovega.*;
 
 import ar.edu.ub.pcsw2016.fginzo.CExerciseEncoding;
@@ -23,14 +26,20 @@ public class CStudentStatistics
         IStudent diego = new StudentDiego();
         diego.addExercise(new ar.edu.ub.pcsw2016.diegovega.ExerciseGitSetup());
         diego.addExercise(new ar.edu.ub.pcsw2016.diegovega.ExerciseCreateStudent());
+        diego.addExercise(new ar.edu.ub.pcsw2016.diegovega.ExerciseEncoding());
         
         IStudent francisco = new CStudentFranciscoGinzo();
         francisco.addExercise(new CExerciseGitSetUp(IExercise.ID.GIT_SETUP));
         francisco.addExercise(new CExerciseStudentCreation(IExercise.ID.STUDENT_CREATION));
         francisco.addExercise(new CExerciseEncoding(IExercise.ID.ENCODING));
         
+        IStudent brian = new CStudentTaylorBrian();
+        brian.addExercise(new GIT_SETUP());
+        brian.addExercise(new STUDENT_CREATION());
+        
         addStudent(diego);
         addStudent(francisco);
+        addStudent(brian);
     }
     
     /** Adds a student to student's list.
