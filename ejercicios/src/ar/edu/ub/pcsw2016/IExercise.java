@@ -1,17 +1,17 @@
 package ar.edu.ub.pcsw2016;
 
 /**
- Interface for exercises. Students will have to implement this interface
- in order to complete their assignments.
+ * Interface for exercises. Students will have to implement this interface
+ * in order to complete their assignments.
  */
-public interface IExercise
-{
-    /** This enumeration holds the ids of the different exercises to be assigned
-     to the students by the professor. When implementing IExercise interface,
-     the corresponding ID should be returned by method id().
+public interface IExercise {
+    /**
+     * This enumeration holds the ids of the different exercises to be assigned
+     * to the students by the professor. When implementing IExercise interface,
+     * the corresponding ID should be returned by method id().
      */
     enum ID
-    {
+	{
         /** GIT_SETUP exercise tasks:
          1) Setup a GitHub account.
          2) Clone the class' repository.
@@ -42,25 +42,32 @@ public interface IExercise
          */
         EXERCISE_COUNT
     }
-    
-    /** Getter for exercise ID. It will be used to track completion of student's
-     assignments.
-     @return The Id of the implemented exercise.
+
+    /**
+     * Getter for exercise ID. It will be used to track completion of student's
+     * assignments.
+     *
+     * @return The Id of the implemented exercise.
      */
     ID id();
-    
-    /** The logic of the exercise should be implemented in this method.
+
+    /**
+     * The logic of the exercise should be implemented in this method.
      */
     void run();
-    
-    /** Returns the grading given to the student for this exercise.
-     @return The grade given (and set) by the professor to the student for the current exercise.
+
+    /**
+     * Returns the grading given to the student for this exercise.
+     *
+     * @return The grade given (and set) by the professor to the student for the current exercise.
      */
     float grade();
-    
-    /** Sets the grading set to the student by the professor for the current exercise.
-     IMPORTANT: this method is not to be called by students, but by the professor instead.
-     @param grade The effective grade given to the student.
+
+    /**
+     * Sets the grading set to the student by the professor for the current exercise.
+     * IMPORTANT: this method is not to be called by students, but by the professor instead.
+     *
+     * @param grade The effective grade given to the student.
      */
     void setGrade(float grade);
 }
