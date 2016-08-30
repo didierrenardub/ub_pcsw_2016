@@ -20,6 +20,6 @@ public class GIT_SETUP implements IExercise{
             System.out.println("valor invalido de nota");
         }
         else
-            this.grade =grade;
-    }
+        this.grade =grade;
+        }
 }

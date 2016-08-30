@@ -5,6 +5,7 @@ import ar.edu.ub.pcsw2016.IStudent;
 import java.util.ArrayList;
 
 public class CStudentTaylorBrian implements IStudent{
+
     private ArrayList <IExercise> exerciseArrayList= new ArrayList <IExercise>();
 
     public CStudentTaylorBrian(){
@@ -50,4 +51,5 @@ public class CStudentTaylorBrian implements IStudent{
         
         return average;
     }
+
 }

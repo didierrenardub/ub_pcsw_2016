@@ -1,0 +1,25 @@
+package ar.edu.ub.pcsw2016.TaylorBrian;
+
+import ar.edu.ub.pcsw2016.IExercise;
+
+public abstract class ACExercise implements IExercise{
+    public float grade=0.0f;
+
+    @Override
+    public float grade() {
+        return this.grade;
+    }
+
+    public ID id(){ return null;}
+
+    public void run(){}
+
+    public void setGrade(float grade){
+        if(grade < 1.0f || grade>10.0f   ){
+            System.out.println("valor invalido de nota");
+        }
+        else
+            this.grade =grade;
+    }
+
+}
