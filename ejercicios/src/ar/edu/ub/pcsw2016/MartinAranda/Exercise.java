@@ -5,8 +5,7 @@ import ar.edu.ub.pcsw2016.IExercise;
 
 import java.util.ArrayList;
 
-public class Exercise implements IExercise, IEncoder {
-    private ArrayList<IExercise> excerciseList = new ArrayList<IExercise>();
+public class Exercise implements IExercise {
     private float grade = 0;
 
     public void run(){
@@ -22,9 +21,5 @@ public class Exercise implements IExercise, IEncoder {
 
     public void setGrade(float grade) {
         this.grade = grade;
-    }
-
-    public String encode(String what){
-        return null;
     }
 }

@@ -26,11 +26,9 @@ public class StudentMartin implements IStudent {
 
     public IExercise exercise(IExercise.ID withId) {
         if (withId != null) {
-            if (exerciseList.size() > 0) {
-                for (IExercise e : exerciseList) {
-                    if (e.id() == withId) {
-                        return e;
-                    }
+            for (IExercise e : exerciseList) {
+                if (e.id() == withId) {
+                    return e;
                 }
             }
         }
@@ -40,11 +38,10 @@ public class StudentMartin implements IStudent {
     public float gradesAverage() {
         if (exerciseList.size() > 0) {
             float average = 0;
-            int exerciseListLength = exerciseList.size();
             for (IExercise e : exerciseList) {
                 average += e.grade();
             }
-            average = average / exerciseListLength;
+            average = average / exerciseList.size();
             return average;
         }
         return 0;
