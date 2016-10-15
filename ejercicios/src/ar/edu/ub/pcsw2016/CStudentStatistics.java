@@ -1,5 +1,6 @@
 package ar.edu.ub.pcsw2016;
 
+import ar.edu.ub.pcsw2016.DidierRenard.CStudentDidierRenard;
 import ar.edu.ub.pcsw2016.MartinAranda.StudentMartin;
 import ar.edu.ub.pcsw2016.TaylorBrian.CStudentTaylorBrian;
 import ar.edu.ub.pcsw2016.TaylorBrian.GIT_SETUP;
@@ -51,12 +52,15 @@ public class CStudentStatistics {
         martin.addExercise(new ar.edu.ub.pcsw2016.MartinAranda.ExerciseGitSetup());
         martin.addExercise(new ar.edu.ub.pcsw2016.MartinAranda.ExerciseCreateStudent());
         martin.addExercise(new ar.edu.ub.pcsw2016.MartinAranda.ExerciseEncoding());
+
+        IStudent didier = new CStudentDidierRenard();
         
         addStudent(diego);
         addStudent(francisco);
         addStudent(juanIgnacio);
         addStudent(brian);
         addStudent(martin);
+        addStudent(didier);
     }
 
     /**
