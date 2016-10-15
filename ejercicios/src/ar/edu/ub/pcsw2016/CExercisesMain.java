@@ -1,5 +1,6 @@
 package ar.edu.ub.pcsw2016;
 
+import ar.edu.ub.pcsw2016.diegovega.RPSDiego;
 import ar.edu.ub.pcsw2016.fginzo.CExerciseEncoding;
 
 public class CExercisesMain
@@ -11,6 +12,7 @@ public class CExercisesMain
         CRPSTournament t = new CRPSTournament();
         CRPSBattleBot bb = new CRPSBattleBot("UB");
         t.addPlayer(new CRPSPlayer(bb, bb));
+        t.addPlayer(new CRPSPlayer(stats.student("Diego Santiago Vega"), new RPSDiego()));
 
         t.play();
 
