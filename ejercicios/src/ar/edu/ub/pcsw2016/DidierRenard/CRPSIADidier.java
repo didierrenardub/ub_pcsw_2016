@@ -15,9 +15,14 @@ public class CRPSIADidier implements IRPSIA
 
     public String play(ArrayList<String> opponentMoves, ArrayList<String> history)
     {
-        String theMove = MOVES.SCISORS;
+        String theMove = randomMove();
 
-        boolean winning = currentScore(opponentMoves) > opponentScore(history);
+        if(m_myMoves.size() > 10)
+        {
+            m_myMoves.remove(m_myMoves.size() - 1);
+        }
+
+        boolean winning = currentScore(opponentMoves) >= opponentScore(opponentMoves);
 
         if(winning)
         {
@@ -148,8 +153,13 @@ public class CRPSIADidier implements IRPSIA
 
     private int currentScore(ArrayList<String> opponentMoves)
     {
+        if(opponentMoves.size() == 0)
+        {
+            return 0;
+        }
+
         int myScore = 0;
-        for(int i = 0; i < opponentMoves.size(); i++)
+        for(int i = 0; i < opponentMoves.size() && i < m_myMoves.size(); i++)
         {
             if(beats(m_myMoves.get(i), opponentMoves.get(i)))
             {
@@ -161,8 +171,13 @@ public class CRPSIADidier implements IRPSIA
 
     private int opponentScore(ArrayList<String> opponentMoves)
     {
+        if(opponentMoves.size() == 0)
+        {
+            return 0;
+        }
+
         int oppScore = 0;
-        for(int i = 0; i < opponentMoves.size(); i++)
+        for(int i = 0; i < opponentMoves.size() && i < m_myMoves.size(); i++)
         {
             if(beats(m_myMoves.get(i), opponentMoves.get(i)))
             {

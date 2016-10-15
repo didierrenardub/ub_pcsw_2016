@@ -3,6 +3,7 @@ package ar.edu.ub.pcsw2016;
 import ar.edu.ub.pcsw2016.DidierRenard.CRPSIADidier;
 import ar.edu.ub.pcsw2016.diegovega.RPSDiego;
 import ar.edu.ub.pcsw2016.fginzo.CExerciseEncoding;
+import ar.edu.ub.pcsw2016.fginzo.CJuegoRPS;
 
 public class CExercisesMain
 {
@@ -15,6 +16,7 @@ public class CExercisesMain
         t.addPlayer(new CRPSPlayer(bb, bb));
         t.addPlayer(new CRPSPlayer(stats.student("Diego Santiago Vega"), new RPSDiego()));
         t.addPlayer(new CRPSPlayer(stats.student("Didier Renard"), new CRPSIADidier()));
+        t.addPlayer(new CRPSPlayer(stats.student("Francisco Ginzo"), new CJuegoRPS()));
 
         t.play();
 

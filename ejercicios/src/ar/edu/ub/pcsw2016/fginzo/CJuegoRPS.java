@@ -4,6 +4,7 @@ import ar.edu.ub.pcsw2016.IRPSIA;
 import ar.edu.ub.pcsw2016.MOVES;
 
 import java.util.ArrayList;
+import java.util.Random;
 
 public class CJuegoRPS implements IRPSIA {
 
@@ -44,7 +45,22 @@ public class CJuegoRPS implements IRPSIA {
         else {
             System.out.println("Todavía no hay movida del oponente para poder jugar.");
         }
-        return null;
+        return randomMove();
+    }
+
+    private String randomMove()
+    {
+        Random r = new Random();
+
+        switch(r.nextInt(3))
+        {
+            case 0:
+                return MOVES.ROCK;
+            case 1:
+                return MOVES.PAPER;
+        }
+
+        return MOVES.SCISORS;
     }
 
 }
