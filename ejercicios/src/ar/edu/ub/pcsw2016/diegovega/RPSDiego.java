@@ -12,6 +12,9 @@ public class RPSDiego implements IRPSIA{
     ArrayList<String> miJugada;
     String miPrimerJugada;
     double numeroRandom = Math.random() * 100;
+    int r = 0;
+    int p = 0;
+    int s = 0;
 
     public RPSDiego(){
         miJugada = new ArrayList<String>();
@@ -31,9 +34,6 @@ public class RPSDiego implements IRPSIA{
 
     @Override
     public String play(ArrayList<String> opponentMoves, ArrayList<String> opponentHistory) {
-        int r = 0;
-        int p = 0;
-        int s = 0;
         if (opponentMoves.size() == 0) {
             if (numeroRandom < 33) {
                 this.miPrimerJugada = MOVES.ROCK;
@@ -43,7 +43,8 @@ public class RPSDiego implements IRPSIA{
                 this.miPrimerJugada = MOVES.SCISORS;
         }
         else{
-            for (String m: opponentMoves){
+            for (int i = opponentMoves.size()-1; i >= 0; i--){
+                String m = opponentMoves.get(opponentMoves.size()-1);
                 if (m != null) {
                     if (m.equals(MOVES.ROCK)){
                         r++;
