@@ -13,7 +13,9 @@ public class RPSDiego implements IRPSIA{
     String miPrimerJugada;
     double numeroRandom = Math.random() * 100;
 
-    public RPSDiego(){}
+    public RPSDiego(){
+        miJugada = new ArrayList<String>();
+    }
 
     public String numeroRandom (){
         if (numeroRandom < 33) {
@@ -100,7 +102,7 @@ public class RPSDiego implements IRPSIA{
                 }
             }
         }
-        return null;
+        return this.miPrimerJugada;
     }
 
 
