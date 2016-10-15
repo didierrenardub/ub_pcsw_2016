@@ -120,4 +120,4 @@ public class RPSDiego implements IRPSIA{
         this.numeroRandom = numeroRandom;
     }
 }
-}
+
