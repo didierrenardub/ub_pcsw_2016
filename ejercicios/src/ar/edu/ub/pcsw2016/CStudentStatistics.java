@@ -1,14 +1,10 @@
 package ar.edu.ub.pcsw2016;
 
+import ar.edu.ub.pcsw2016.ablanco.CStudentAndresBlanco;
 import ar.edu.ub.pcsw2016.DidierRenard.CStudentDidierRenard;
 import ar.edu.ub.pcsw2016.MartinAranda.StudentMartin;
-import ar.edu.ub.pcsw2016.TaylorBrian.CStudentTaylorBrian;
-import ar.edu.ub.pcsw2016.TaylorBrian.GIT_SETUP;
-import ar.edu.ub.pcsw2016.TaylorBrian.STUDENT_CREATION;
 
-import ar.edu.ub.pcsw2016.diegovega.ExerciseCreateStudent;
-import ar.edu.ub.pcsw2016.diegovega.ExerciseEncoding;
-import ar.edu.ub.pcsw2016.diegovega.ExerciseGitSetup;
+import ar.edu.ub.pcsw2016.fcarmona.CStudentFacundoCarmona;
 import ar.edu.ub.pcsw2016.diegovega.StudentDiego;
 import ar.edu.ub.pcsw2016.fginzo.CExerciseEncoding;
 import ar.edu.ub.pcsw2016.fginzo.CExerciseGitSetUp;
@@ -43,10 +39,6 @@ public class CStudentStatistics {
         IStudent juanIgnacio = new CStudentJuanTarallo();
         juanIgnacio.addExercise(new ar.edu.ub.pcsw2016.jit.ExerciseGitSetup(IExercise.ID.GIT_SETUP));
         juanIgnacio.addExercise(new ar.edu.ub.pcsw2016.jit.ExerciseStudentCreation(IExercise.ID.STUDENT_CREATION));
-    
-        IStudent brian = new CStudentTaylorBrian();
-        brian.addExercise(new GIT_SETUP());
-        brian.addExercise(new STUDENT_CREATION());
 
         IStudent martin = new StudentMartin();
         martin.addExercise(new ar.edu.ub.pcsw2016.MartinAranda.ExerciseGitSetup());
@@ -55,11 +47,16 @@ public class CStudentStatistics {
 
         IStudent didier = new CStudentDidierRenard();
         
+        IStudent andres = new CStudentAndresBlanco();
+        
+        IStudent facundo = new CStudentFacundoCarmona();
+        
         addStudent(diego);
         addStudent(francisco);
-        addStudent(juanIgnacio);
-        addStudent(brian);
+        addStudent(andres);
         addStudent(martin);
+        addStudent(facundo);
+        addStudent(juanIgnacio);
         addStudent(didier);
     }
 
@@ -150,6 +147,32 @@ public class CStudentStatistics {
 
         return completion / totalCompletion * 100.0f;
     }
-
+    
+    public void runExercises()
+    {
+        for(IStudent s : students())
+        {
+            System.out.println("Running exercises from " + s.name());
+            for(int i = 0; i < IExercise.ID.EXERCISE_COUNT.ordinal(); i++)
+            {
+                IExercise e = s.exercise(IExercise.ID.values()[i]);
+            
+                System.out.println("---------------------------------------------------");
+                System.out.print("Exercise " + IExercise.ID.values()[i].name() + "... ");
+            
+                if(e != null)
+                {
+                    System.out.println("running: ");
+                    e.run();
+                }
+                else
+                {
+                    System.out.println("NOT FOUND");
+                }
+            }
+            System.out.println("===================================================");
+        }
+    }
+    
     private ArrayList<IStudent> m_students;
 }

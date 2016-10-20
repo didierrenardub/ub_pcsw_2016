@@ -27,7 +27,7 @@ public class CRPSMatch
 
     public void play(int roundCount)
     {
-        final long WAIT_TIME = 1000;
+        final long WAIT_TIME = 0;
 
         print("***********************\n", 0);
         print("Next match: " + home().student().name() + " vs " + away().student().name() + "\n", 0);
