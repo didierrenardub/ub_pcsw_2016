@@ -25,13 +25,17 @@ public class MovimientoCesar {
                 if (c == d)
                 {
                     int variante = j + desplazamiento;
-                    if(variante > 23)
+                    if(variante >= alfabetoOriginal.length())
                     {
-                        palabraModificada += alfabetoOriginal.charAt(variante - 24);
+                        palabraModificada += alfabetoOriginal.charAt(variante - alfabetoOriginal.length());
+                    }
+                    else if(variante < 0)
+                    {
+                        palabraModificada += alfabetoOriginal.charAt(variante + alfabetoOriginal.length());
                     }
                     else
                     {
-                        palabraModificada += alfabetoOriginal.charAt(j + desplazamiento);
+                        palabraModificada += alfabetoOriginal.charAt(variante);
                     }
                 }
             }

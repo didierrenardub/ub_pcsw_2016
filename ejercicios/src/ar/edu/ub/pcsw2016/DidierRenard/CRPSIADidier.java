@@ -22,124 +22,115 @@ public class CRPSIADidier implements IRPSIA
             m_myMoves.remove(m_myMoves.size() - 1);
         }
 
-        boolean winning = currentScore(opponentMoves) >= opponentScore(opponentMoves);
+        int rocks = 0;
+        int papers = 0;
+        int scissors = 0;
 
-        if(winning)
+        for(String oppMove : opponentMoves)
         {
-            theMove = randomMove();
-        }
-        else // gotta take it seriously
-        {
-            int rocks = 0;
-            int papers = 0;
-            int scisors = 0;
-
-            for(String oppMove : opponentMoves)
+            if(oppMove.equals(MOVES.ROCK))
             {
-                if(oppMove.equals(MOVES.ROCK))
+                rocks++;
+            }
+            else if(oppMove.equals(MOVES.PAPER))
+            {
+                papers++;
+            }
+            else
+            {
+                scissors++;
+            }
+        }
+
+        Random r = new Random();
+        switch(r.nextInt(3))
+        {
+            case 0: // strategy one: most probable, based on statistics
+            {
+                if(rocks > papers && rocks > scissors)
                 {
-                    rocks++;
+                    theMove = MOVES.PAPER;
                 }
-                else if(oppMove.equals(MOVES.PAPER))
+                else if(papers > rocks && papers > scissors)
                 {
-                    papers++;
+                    theMove = MOVES.SCISORS;
                 }
-                else
+                else if(scissors > rocks && scissors > papers)
                 {
-                    scisors++;
+                    theMove = MOVES.ROCK;
+                }
+                else // odds are shared between more than one move; let fate decide
+                {
+                    theMove = randomMove();
                 }
             }
+            break;
 
-            Random r = new Random();
-            switch(r.nextInt(3))
+            case 1: // strategy two: most probable, based on uniform distribution
             {
-                case 0: // strategy one: most probable, based on statistics
+                if(rocks < papers && rocks < scissors)
                 {
-                    if(rocks > papers && rocks > scisors)
-                    {
-                        theMove = MOVES.PAPER;
-                    }
-                    else if(papers > rocks && papers > scisors)
+                    theMove = MOVES.PAPER;
+                }
+                else if(papers < rocks && papers < scissors)
+                {
+                    theMove = MOVES.SCISORS;
+                }
+                else if(scissors < rocks && scissors < papers)
+                {
+                    theMove = MOVES.ROCK;
+                }
+                else // odds are shared between more than one move; let fate decide
+                {
+                    theMove = randomMove();
+                }
+            }
+            break;
+
+            case 2: // strategy three: last move check
+            {
+                String lastOpp = lastOpponentMove(opponentMoves);
+                String lastMine = lastMove();
+                boolean oppWin = beats(lastOpp, lastMine);
+                if(lastOpp.equals(MOVES.ROCK))
+                {
+                    if(oppWin)
                     {
                         theMove = MOVES.SCISORS;
-                    }
-                    else if(scisors > rocks && scisors > papers)
-                    {
-                        theMove = MOVES.ROCK;
-                    }
-                    else // odds are shared between more than one move; let fate decide
-                    {
-                        theMove = randomMove();
-                    }
-                }
-                break;
-
-                case 1: // strategy two: most probable, based on uniform distribution
-                {
-                    if(rocks < papers && rocks < scisors)
-                    {
-                        theMove = MOVES.PAPER;
-                    }
-                    else if(papers < rocks && papers < scisors)
-                    {
-                        theMove = MOVES.SCISORS;
-                    }
-                    else if(scisors < rocks && scisors < papers)
-                    {
-                        theMove = MOVES.ROCK;
-                    }
-                    else // odds are shared between more than one move; let fate decide
-                    {
-                        theMove = randomMove();
-                    }
-                }
-                break;
-
-                case 2: // strategy three: last move check
-                {
-                    String lastOpp = opponentMoves.get(opponentMoves.size() - 1);
-                    String lastMine = m_myMoves.get(m_myMoves.size() - 1);
-                    boolean oppWin = beats(lastOpp, lastMine);
-                    if(lastOpp.equals(MOVES.ROCK))
-                    {
-                        if(oppWin)
-                        {
-                            theMove = MOVES.SCISORS;
-                        }
-                        else
-                        {
-                            theMove = MOVES.ROCK;
-                        }
-                    }
-                    else if(lastOpp.equals(MOVES.PAPER))
-                    {
-                        if(oppWin)
-                        {
-                            theMove = MOVES.ROCK;
-                        }
-                        else
-                        {
-                            theMove = MOVES.PAPER;
-                        }
-                    }
-                    else if(lastOpp.equals(MOVES.SCISORS) && oppWin)
-                    {
-                        if(oppWin)
-                        {
-                            theMove = MOVES.PAPER;
-                        }
-                        else
-                        {
-                            theMove = MOVES.SCISORS;
-                        }
                     }
                     else
                     {
-                        theMove = randomMove();
+                        theMove = MOVES.ROCK;
                     }
                 }
-                break;
+                else if(lastOpp.equals(MOVES.PAPER))
+                {
+                    if(oppWin)
+                    {
+                        theMove = MOVES.ROCK;
+                    }
+                    else
+                    {
+                        theMove = MOVES.PAPER;
+                    }
+                }
+                else if(lastOpp.equals(MOVES.SCISORS) && oppWin)
+                {
+                    if(oppWin)
+                    {
+                        theMove = MOVES.PAPER;
+                    }
+                    else
+                    {
+                        theMove = MOVES.SCISORS;
+                    }
+                }
+                else
+                {
+                    theMove = randomMove();
+                }
             }
+            break;
         }
 
         play(theMove);
@@ -167,6 +158,26 @@ public class CRPSIADidier implements IRPSIA
             }
         }
         return myScore;
+    }
+    
+    private String lastOpponentMove(ArrayList<String> opponentMoves)
+    {
+        if(opponentMoves == null || opponentMoves.size() == 0)
+        {
+            return randomMove();
+        }
+        
+        return opponentMoves.get(opponentMoves.size() - 1);
+    }
+    
+    private String lastMove()
+    {
+        if(m_myMoves == null || m_myMoves.size() == 0)
+        {
+            return randomMove();
+        }
+        
+        return m_myMoves.get(m_myMoves.size() - 1);
     }
 
     private int opponentScore(ArrayList<String> opponentMoves)
