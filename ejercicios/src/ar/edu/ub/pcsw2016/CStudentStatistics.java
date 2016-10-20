@@ -1,12 +1,14 @@
 package ar.edu.ub.pcsw2016;
 
 import ar.edu.ub.pcsw2016.ablanco.CStudentAndresBlanco;
+import ar.edu.ub.pcsw2016.DidierRenard.CStudentDidierRenard;
+import ar.edu.ub.pcsw2016.MartinAranda.StudentMartin;
 import ar.edu.ub.pcsw2016.TaylorBrian.CStudentTaylorBrian;
 import ar.edu.ub.pcsw2016.TaylorBrian.GIT_SETUP;
 import ar.edu.ub.pcsw2016.TaylorBrian.STUDENT_CREATION;
-import ar.edu.ub.pcsw2016.diegovega.*;
 
 import ar.edu.ub.pcsw2016.fcarmona.CStudentFacundoCarmona;
+import ar.edu.ub.pcsw2016.diegovega.StudentDiego;
 import ar.edu.ub.pcsw2016.fginzo.CExerciseEncoding;
 import ar.edu.ub.pcsw2016.fginzo.CExerciseGitSetUp;
 import ar.edu.ub.pcsw2016.fginzo.CExerciseStudentCreation;
@@ -14,8 +16,7 @@ import ar.edu.ub.pcsw2016.fginzo.CStudentFranciscoGinzo;
 import ar.edu.ub.pcsw2016.maranda.CStudentMartinAranda;
 import ar.edu.ub.pcsw2016.nvega.CStudentNectorVega;
 
-import ar.edu.ub.pcsw2016.jit.*;
-import ar.edu.ub.pcsw2016.jit.ExerciseGitSetup;
+import ar.edu.ub.pcsw2016.jit.CStudentJuanTarallo;
 
 import java.util.ArrayList;
 
@@ -47,12 +48,17 @@ public class CStudentStatistics {
         IStudent brian = new CStudentTaylorBrian();
         brian.addExercise(new GIT_SETUP());
         brian.addExercise(new STUDENT_CREATION());
+
+        IStudent martin = new StudentMartin();
+        martin.addExercise(new ar.edu.ub.pcsw2016.MartinAranda.ExerciseGitSetup());
+        martin.addExercise(new ar.edu.ub.pcsw2016.MartinAranda.ExerciseCreateStudent());
+        martin.addExercise(new ar.edu.ub.pcsw2016.MartinAranda.ExerciseEncoding());
+
+        IStudent didier = new CStudentDidierRenard();
         
         IStudent andres = new CStudentAndresBlanco();
         
         IStudent nector = new CStudentNectorVega();
-        
-        IStudent martin = new CStudentMartinAranda();
         
         IStudent facundo = new CStudentFacundoCarmona();
         
@@ -64,6 +70,7 @@ public class CStudentStatistics {
         addStudent(facundo);
         addStudent(juanIgnacio);
         addStudent(brian);
+        addStudent(didier);
     }
 
     /**
