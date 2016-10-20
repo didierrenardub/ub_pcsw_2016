@@ -21,7 +21,6 @@ public class CExercisesMain
 
         t.play();
 
-        /*
         IStudent diego = stats.student("Diego Santiago Vega");
         diego.exercise(IExercise.ID.GIT_SETUP).setGrade(CGrader.instance().completion(10.0f).finalGrade());
         diego.exercise(IExercise.ID.STUDENT_CREATION).setGrade(CGrader.instance().completion(8.0f).prolixity(8.0f).reliability(8.0f).design(5.0f).finalGrade());
@@ -35,15 +34,11 @@ public class CExercisesMain
         IStudent juanIgnacio = stats.student("Juan Tarallo");
         juanIgnacio.exercise(IExercise.ID.GIT_SETUP).setGrade(CGrader.instance().completion(10.0f).finalGrade());
         juanIgnacio.exercise(IExercise.ID.STUDENT_CREATION).setGrade(CGrader.instance().completion(1.0f).prolixity(9.0f).reliability(2.0f).design(2.0f).finalGrade());
-        
-        IStudent brian = stats.student("Brian Agustín Taylor");
-        brian.exercise(IExercise.ID.GIT_SETUP).setGrade(CGrader.instance().completion(10.0f).finalGrade());
-        brian.exercise(IExercise.ID.STUDENT_CREATION).setGrade(CGrader.instance().completion(1.0f).prolixity(2.0f).reliability(4.0f).design(5.0f).finalGrade());
     
         System.out.println("Average grades:");
         for(IStudent s : stats.students())
         {
             System.out.println("\t" + s.name() + ": " + s.gradesAverage());
-        }*/
+        }
     }
 }

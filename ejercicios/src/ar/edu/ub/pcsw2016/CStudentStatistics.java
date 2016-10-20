@@ -3,9 +3,6 @@ package ar.edu.ub.pcsw2016;
 import ar.edu.ub.pcsw2016.ablanco.CStudentAndresBlanco;
 import ar.edu.ub.pcsw2016.DidierRenard.CStudentDidierRenard;
 import ar.edu.ub.pcsw2016.MartinAranda.StudentMartin;
-import ar.edu.ub.pcsw2016.TaylorBrian.CStudentTaylorBrian;
-import ar.edu.ub.pcsw2016.TaylorBrian.GIT_SETUP;
-import ar.edu.ub.pcsw2016.TaylorBrian.STUDENT_CREATION;
 
 import ar.edu.ub.pcsw2016.fcarmona.CStudentFacundoCarmona;
 import ar.edu.ub.pcsw2016.diegovega.StudentDiego;
@@ -13,8 +10,6 @@ import ar.edu.ub.pcsw2016.fginzo.CExerciseEncoding;
 import ar.edu.ub.pcsw2016.fginzo.CExerciseGitSetUp;
 import ar.edu.ub.pcsw2016.fginzo.CExerciseStudentCreation;
 import ar.edu.ub.pcsw2016.fginzo.CStudentFranciscoGinzo;
-import ar.edu.ub.pcsw2016.maranda.CStudentMartinAranda;
-import ar.edu.ub.pcsw2016.nvega.CStudentNectorVega;
 
 import ar.edu.ub.pcsw2016.jit.CStudentJuanTarallo;
 
@@ -44,10 +39,6 @@ public class CStudentStatistics {
         IStudent juanIgnacio = new CStudentJuanTarallo();
         juanIgnacio.addExercise(new ar.edu.ub.pcsw2016.jit.ExerciseGitSetup(IExercise.ID.GIT_SETUP));
         juanIgnacio.addExercise(new ar.edu.ub.pcsw2016.jit.ExerciseStudentCreation(IExercise.ID.STUDENT_CREATION));
-    
-        IStudent brian = new CStudentTaylorBrian();
-        brian.addExercise(new GIT_SETUP());
-        brian.addExercise(new STUDENT_CREATION());
 
         IStudent martin = new StudentMartin();
         martin.addExercise(new ar.edu.ub.pcsw2016.MartinAranda.ExerciseGitSetup());
@@ -58,18 +49,14 @@ public class CStudentStatistics {
         
         IStudent andres = new CStudentAndresBlanco();
         
-        IStudent nector = new CStudentNectorVega();
-        
         IStudent facundo = new CStudentFacundoCarmona();
         
         addStudent(diego);
         addStudent(francisco);
         addStudent(andres);
-        addStudent(nector);
         addStudent(martin);
         addStudent(facundo);
         addStudent(juanIgnacio);
-        addStudent(brian);
         addStudent(didier);
     }
 
