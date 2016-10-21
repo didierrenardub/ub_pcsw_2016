@@ -81,6 +81,12 @@ public class CExercisesMain
         t.addPlayer(new CRPSPlayer(stats().student("Francisco Ginzo"), new CJuegoRPS()));
         t.play();
     }
+    
+    private void consoleWarriorsTournament()
+    {
+        CCWTournament t = new CCWTournament();
+        t.play();
+    }
         
     public static void main(String[] args)
     {
@@ -95,7 +101,7 @@ public class CExercisesMain
             break;
             
             case 2:
-                //
+                app.consoleWarriorsTournament();
             break;
             
             case 3:
