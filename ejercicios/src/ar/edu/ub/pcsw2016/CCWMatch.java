@@ -27,10 +27,10 @@ public class CCWMatch
         print("***********************\n", 0);
         print("Next match:\n"
                 + home().student().name() + " with \"" + home().warrior().name() + "\"\n" + "vs.\n"
-                + away().student().name() + "with \"" + away().warrior().name() + "\"\n", 0);
+                + away().student().name() + " with \"" + away().warrior().name() + "\"\n", 0);
         print("***********************\n", 0);
-        print(home().warrior().name() + ": H" + home().warrior().health() + " / P" + home().warrior().power() + " / D" + home().warrior().defense() + " / A" + home().warrior().accuracy() + "\n", 0);
-        print(away().warrior().name() + ": H" + away().warrior().health() + " / P" + away().warrior().power() + " / D" + away().warrior().defense() + " / A" + away().warrior().accuracy() + "\n", 0);
+        print(home().warrior().name() + ": H" + home().warrior().health() + " / P" + home().warrior().power() + " / D" + home().warrior().defense() + " / A" + home().warrior().accuracy() + " / " + home().warrior().ability().toString() + "\n", 0);
+        print(away().warrior().name() + ": H" + away().warrior().health() + " / P" + away().warrior().power() + " / D" + away().warrior().defense() + " / A" + away().warrior().accuracy() + " / " + away().warrior().ability().toString() + "\n", 0);
         print("***********************\n", WAIT_TIME * 3);
 
         ArrayList<WARRIOR_ACTION> hAct = new ArrayList<>();
@@ -63,27 +63,46 @@ public class CCWMatch
             {
                 print("Both warriors were idle; nothing happened.\n");
             }
+            else if(lastAction(aAct) == lastAction(hAct) && lastAction(hAct) == WARRIOR_ACTION.ATTACK)
+            {
+                if(m_random.nextBoolean())
+                {
+                    processAttack(home().warrior(), away().warrior(), lastAction(aAct));
+                    processAttack(away().warrior(), home().warrior(), lastAction(hAct));
+                }
+                else
+                {
+                    processAttack(away().warrior(), home().warrior(), lastAction(hAct));
+                    processAttack(home().warrior(), away().warrior(), lastAction(aAct));
+                }
+            }
 
             print(home().warrior().name() + " has " + home().warrior().currentHealth() + "/" + home().warrior().health() + "; " + away().warrior().name() + " has " + away().warrior().currentHealth() + "/" + away().warrior().health() + "\n");
 
             if(hStatus == home().warrior().status() && hStatus != WARRIOR_STATUS.NORMAL)
             {
                 home().warrior().normalize();
+                print(home().warrior().name() + " came back to normal\n");
             }
 
             if(aStatus == away().warrior().status() && aStatus != WARRIOR_STATUS.NORMAL)
             {
                 away().warrior().normalize();
+                print(away().warrior().name() + " came back to normal\n");
             }
+
+            print("\n", 0);
         }
 
         if(home().warrior().alive())
         {
             print(home().student().name() + ", with " + home().warrior().name() + ", won the match!\n", WAIT_TIME * 2);
+            home().win(home().warrior().currentHealth());
         }
         else
         {
             print(away().student().name() + ", with " + away().warrior().name() + ", won the match!\n", WAIT_TIME * 2);
+            away().win(away().warrior().currentHealth());
         }
     }
 
@@ -106,7 +125,7 @@ public class CCWMatch
         }
         else
         {
-            boolean blocked = m_random.nextInt(m_abilityLimit) < defender.defense();
+            boolean blocked = m_random.nextInt(greatestAbility(defender)) < defender.defense();
             boolean broke = attacker.ability() == WARRIOR_ABILITY.LOW_KICK && m_random.nextInt(100) < 15;
 
             if(blocked && !broke)
@@ -125,9 +144,19 @@ public class CCWMatch
         }
     }
 
+    public int greatestAbility(CConsoleWarrior w)
+    {
+        int p = w.power();
+        int h = w.health();
+        int a = w.accuracy();
+        int d = w.defense();
+
+        return Math.max(p, Math.max(h, Math.max(a, d)));
+    }
+
     public void attack(CConsoleWarrior attacker, CConsoleWarrior defender)
     {
-        boolean hit = m_random.nextInt(m_abilityLimit) < attacker.accuracy();
+        boolean hit = m_random.nextInt(greatestAbility(attacker)) < attacker.accuracy();
         boolean avoid = defender.ability() == WARRIOR_ABILITY.AGILITY && m_random.nextInt(100) < 20;
 
         if(!hit && attacker.ability() == WARRIOR_ABILITY.FOCUS && m_random.nextInt(100) < 30)
@@ -221,7 +250,7 @@ public class CCWMatch
     
     private CCWPlayer m_home;
     private CCWPlayer m_away;
-    private Random m_random;
+    private Random m_random = new Random();
     private int m_abilityLimit;
 
     private final long WAIT_TIME = 500;
