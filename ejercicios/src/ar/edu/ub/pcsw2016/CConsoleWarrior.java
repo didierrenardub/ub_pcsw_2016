@@ -29,7 +29,7 @@ public abstract class CConsoleWarrior
             return false;
         }
         
-        return (power() + health() + accuracy() + defense()) != m_totalAbilityPoints;
+        return (power() + health() + accuracy() + defense()) == m_totalAbilityPoints;
     }
 
     public final void hit(int by)
