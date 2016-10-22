@@ -16,6 +16,22 @@ public class CCWTournament
     
     public void addPlayer(CCWPlayer player)
     {
+        if(player == null)
+        {
+            System.out.println("Player cannot be null");
+            return;
+        }
+        else if(player.warrior() == null)
+        {
+            System.out.println("Player " + player.student().name() + " cannot participate as he has no warrior");
+            return;
+        }
+        else if(player.warrior().valid())
+        {
+            System.out.println("Player " + player.student().name() + " cannot participate as his warrior is invalid");
+            return;
+        }
+
         m_players.add(player);
     }
     
@@ -25,7 +41,7 @@ public class CCWTournament
         {
             for(int j = i + 1; j < m_players.size(); j++)
             {
-                m_matches.add(new CCWMatch(m_players.get(i), m_players.get(j)));
+                m_matches.add(new CCWMatch(m_players.get(i), m_players.get(j), 100));
             }
         }
         

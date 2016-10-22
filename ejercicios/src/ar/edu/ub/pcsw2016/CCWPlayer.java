@@ -25,9 +25,9 @@ public class CCWPlayer
         return this.m_points;
     }
     
-    public void win()
+    public void win(int points)
     {
-        this.m_points += 3;
+        this.m_points += points;
     }
     
     public void draw()
