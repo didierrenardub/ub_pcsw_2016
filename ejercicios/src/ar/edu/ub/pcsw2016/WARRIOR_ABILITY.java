@@ -12,5 +12,6 @@ public enum WARRIOR_ABILITY
     FOCUS, // gives a 30% to have perfect accuracy
     LOW_KICK, // gives a 15% chance to break an enemy block
     CONFUSE, // gives a 30% to make enemy dizzy if it misses the attack
-    MIRROR // gives a 15% chance to reflect the enemy's attack to himself
+    MIRROR, // gives a 5% chance to reflect the enemy's attack to himself
+    DRAGON_PUNCH // gives a 1% chance of KO
 }

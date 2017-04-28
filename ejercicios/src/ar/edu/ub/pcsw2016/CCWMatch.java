@@ -171,13 +171,14 @@ public class CCWMatch
             boolean rage = attacker.ability() == WARRIOR_ABILITY.RAGE && m_random.nextInt(100) < 25;
             boolean suckerPunch = attacker.ability() == WARRIOR_ABILITY.SUCKER_PUNCH && m_random.nextInt(100) < 20;
             boolean headAttack = attacker.ability() == WARRIOR_ABILITY.HEAD_ATTACK && m_random.nextInt(100) < 15;
+            boolean dragonPunch = attacker.ability() == WARRIOR_ABILITY.DRAGON_PUNCH && m_random.nextInt(100) == 1;
 
             if(rage)
             {
                 amount *= 2;
             }
 
-            if(defender.ability() == WARRIOR_ABILITY.MIRROR && m_random.nextInt(100) < 15)
+            if(defender.ability() == WARRIOR_ABILITY.MIRROR && m_random.nextInt(100) < 5)
             {
                 print(defender.name() + " mirrored " + attacker.name() + "'s attack back to himself!!!\n", WAIT_TIME);
                 defender = attacker;
@@ -186,6 +187,11 @@ public class CCWMatch
             if(rage)
             {
                 print(attacker.name() + " hit " + defender.name() + " with RAGE", 0);
+            }
+            else if(dragonPunch)
+            {
+                amount = defender.currentHealth();
+                print(attacker.name() + " hit " + defender.name() + " with DRAGON PUNCH and left him KO!!!", 0);
             }
             else
             {

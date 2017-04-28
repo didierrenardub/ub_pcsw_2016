@@ -84,11 +84,15 @@ public class CExercisesMain
     
     private void consoleWarriorsTournament()
     {
-        CCWTournament t = new CCWTournament(100);
-        CRPSBattleBot bb = new CRPSBattleBot("UB");
+        CCWTournament t = new CCWTournament(200);
+        CRPSBattleBot bb = new CRPSBattleBot("Wittbecker");
         CRPSBattleBot bb2 = new CRPSBattleBot("Aguilera");
+        CRPSBattleBot bb3 = new CRPSBattleBot("Greiner");
+        CRPSBattleBot bb4 = new CRPSBattleBot("Aldegani");
         t.addPlayer(new CCWPlayer(bb, new CConsoleWarriorBot(t.maxAbility())));
         t.addPlayer(new CCWPlayer(bb2, new CConsoleWarriorBot("Optimus", t.maxAbility())));
+        t.addPlayer(new CCWPlayer(bb3, new CConsoleWarriorBot("Vader", t.maxAbility())));
+        t.addPlayer(new CCWPlayer(bb4, new CConsoleWarriorBot("Luke", t.maxAbility())));
         t.play();
     }
         
