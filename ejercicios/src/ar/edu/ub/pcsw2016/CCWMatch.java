@@ -9,7 +9,6 @@ public class CCWMatch
     {
         this.m_home = p1;
         this.m_away = p2;
-        this.m_abilityLimit = abilityLimit - 3;
     }
     
     public CCWPlayer home()
@@ -257,7 +256,6 @@ public class CCWMatch
     private CCWPlayer m_home;
     private CCWPlayer m_away;
     private Random m_random = new Random();
-    private int m_abilityLimit;
 
     private final long WAIT_TIME = 500;
 }

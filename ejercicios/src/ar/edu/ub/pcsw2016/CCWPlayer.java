@@ -30,11 +30,6 @@ public class CCWPlayer
         this.m_points += points;
     }
     
-    public void draw()
-    {
-        this.m_points += 1;
-    }
-    
     private IStudent m_student;
     private CConsoleWarrior m_warrior;
     private int m_points;
